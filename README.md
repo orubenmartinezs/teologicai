@@ -1,59 +1,124 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 📖 TheoLogic AI — Interfaz de Inteligencia Teológica
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+[![Laravel](https://img.shields.io/badge/Laravel-12.x-FF2D20?style=for-the-badge&logo=laravel&logoColor=white)](https://laravel.com)
+[![Livewire](https://img.shields.io/badge/Livewire-3.x-FB70A9?style=for-the-badge&logo=livewire&logoColor=white)](https://livewire.laravel.com)
+[![TailwindCSS](https://img.shields.io/badge/TailwindCSS-v3-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com)
+[![Alpine.js](https://img.shields.io/badge/Alpine.js-3.x-8BC0D0?style=for-the-badge&logo=alpine.js&logoColor=white)](https://alpinejs.dev)
+[![RAGains Core](https://img.shields.io/badge/Powered%20By-RAGains%20Core-6366F1?style=for-the-badge)](https://github.com/orubenmartinezs/ragains)
 
-## About Laravel
+**TheoLogic AI** es una aplicación web frontend de última generación diseñada para la consulta, investigación y estudio teológico profundo. Funciona como un cliente desacoplado que consume el motor de inteligencia y recuperación documental **RAGains Core** vía API BaaS, garantizando respuestas fidedignas, contextualizadas y fundamentadas en las Sagradas Escrituras y obras teológicas clásicas.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+---
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## 🏛️ Arquitectura Desacoplada
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+TheoLogic AI no almacena los vectores ni realiza embeddings localmente. Toda la lógica pesada de IA, búsqueda semántica y tool calling se delega al backend central:
 
-## Learning Laravel
+```mermaid
+graph LR
+    User([Usuario / Teólogo]) -->|Interactúa| TheoLogic[TheoLogic AI (Frontend Client)]
+    TheoLogic -->|POST /api/v1/chat con X-Tenant-Key| Core[RAGains Core BaaS (Backend)]
+    Core -->|pgvector| DB[(PostgreSQL Embeddings)]
+    Core -->|Prism-PHP / Gemini| LLM[Modelos de IA + APIs Bíblicas]
+    Core -->|JSON con Fuentes + Citas| TheoLogic
+    TheoLogic -->|Renderiza Respuesta + Historial| User
+```
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+---
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## ✨ Características Principales
 
-## Laravel Sponsors
+* **🎨 Experiencia Visual Premium:** Interfaz inmersiva con estética *Glassmorphism*, paleta tonal púrpura profunda (`#312a38` / `#4d3e5b`), gradientes radiales y micro-interacciones suaves.
+* **⚡ Reactividad Total con Livewire 3 y Alpine.js:** Flujo de chat en tiempo real sin recargas de página, indicadores de estado de pensamiento del asistente y gestión de scroll automático.
+* **📚 Historial y Gestión de Conversaciones:**
+  * Persistencia local de chats por usuario.
+  * Fijación de chats favoritos con acceso rápido.
+  * Búsqueda en vivo dentro de la lista de conversaciones.
+  * Búsqueda intra-chat en tiempo real sobre la conversación activa.
+* **📄 Exportación y Citas:**
+  * Soporte completo de renderizado Markdown (citas en bloque, tablas, listas, código).
+  * Botón para exportar cualquier respuesta generada directamente a archivo `.md`.
+  * Copia rápida de respuestas al portapapeles con toasts informativos.
+* **🔐 Seguridad y Aislamiento:** Autenticación de usuarios por sesión local y comunicación segura contra RAGains Core mediante cabeceras `X-Tenant-Key`.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+---
 
-### Premium Partners
+## 🚀 Requisitos del Sistema
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+* PHP 8.2 o superior
+* Composer
+* Node.js 18+ y NPM
+* SQLite o PostgreSQL / MySQL para la base de datos de usuarios e historial de chat local
+* Una instancia activa de [RAGains Core](https://github.com/orubenmartinezs/ragains)
 
-## Contributing
+---
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## 🛠️ Instalación y Puesta en Marcha
 
-## Code of Conduct
+### 1. Clonar el repositorio
+```bash
+git clone https://github.com/orubenmartinezs/teologicai.git
+cd teologicai
+```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### 2. Instalar dependencias
+```bash
+composer install
+npm install
+```
 
-## Security Vulnerabilities
+### 3. Configurar variables de entorno
+Copia el archivo de ejemplo y genera la clave de la aplicación:
+```bash
+cp .env.example .env
+php artisan key:generate
+```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Edita tu archivo `.env` para apuntar a tu servidor de RAGains Core:
+```env
+APP_NAME="TheoLogic AI"
+APP_URL=http://127.0.0.1:8001
 
-## License
+# Conexión con RAGains Core (Backend BaaS)
+RAGAINS_API_URL=http://127.0.0.1:8000
+RAGAINS_API_KEY=rag_tenant_theologic_ai_live_key_2026
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+# Base de datos local para usuarios e historial de chats
+DB_CONNECTION=sqlite
+```
+
+### 4. Ejecutar migraciones
+```bash
+touch database/database.sqlite
+php artisan migrate
+```
+
+### 5. Compilar assets y levantar el servidor
+En una terminal:
+```bash
+npm run dev
+```
+
+En otra terminal:
+```bash
+php artisan serve --port=8001
+```
+
+Accede desde tu navegador a `http://127.0.0.1:8001`.
+
+---
+
+## 🧪 Pruebas y Validación
+
+Para ejecutar las pruebas automatizadas del proyecto:
+```bash
+php artisan test
+```
+
+---
+
+## 👤 Autor y Créditos
+
+* **Desarrollador:** Oscar Rubén Martínez Sánchez
+* **Organización:** Taranja Digital
+* **Licencia:** Todos los derechos reservados / Propietario.
