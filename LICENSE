@@ -1,0 +1,51 @@
+LICENCIA DE SOFTWARE PROPIETARIO Y ACUERDO DE DERECHOS DE AUTOR
+
+PROYECTO: RAGains Core Platform
+TITULAR DE LOS DERECHOS: Oscar Ruben Martinez Sanchez
+FIRMA DE IDENTIDAD: @signature orms-kermint-2000
+AÑO: 2026
+
+TODOS LOS DERECHOS RESERVADOS / ALL RIGHTS RESERVED
+
+AVISO LEGAL Y DE PROPIEDAD INTELECTUAL:
+El presente software, código fuente, arquitectura, esquemas de bases de datos,
+modelos de datos, interfaces, algoritmos y documentación asociada ("el Software")
+son propiedad exclusiva y confidencial de Oscar Ruben Martinez Sanchez.
+
+El Software se encuentra protegido por la Ley Federal del Derecho de Autor de los
+Estados Unidos Mexicanos (INDAUTOR), los tratados internacionales de propiedad
+intelectual (incluyendo el Convenio de Berna y el Tratado de la OMPI sobre Derecho
+de Autor) y demás leyes aplicables.
+
+TÉRMINOS Y CONDICIONES DE USO:
+1. PROHIBICIÓN DE REPRODUCCIÓN Y DISTRIBUCIÓN:
+   Queda terminantemente prohibida la copia, reproducción, duplicación, distribución,
+   publicación, arrendamiento, cesión, sublicenciamiento o difusión pública, ya sea
+   total o parcial, del código fuente o binarios, por cualquier medio físico o digital,
+   sin la previa autorización expresa y por escrito del titular.
+
+2. INGENIERÍA INVERSA Y OBRAS DERIVADAS:
+   Queda expresamente prohibido descompilar, realizar ingeniería inversa, desensamblar,
+   modificar, traducir, adaptar o crear obras derivadas basadas en este Software o en
+   cualquier parte del mismo.
+
+3. USO COMERCIAL O PERSONAL:
+   Ninguna persona física o moral tiene permitido el uso, despliegue, ejecución en
+   producción, integración o explotación comercial o personal del Software sin un
+   acuerdo o licencia comercial de servicio debidamente suscrito por el titular.
+
+4. MARCAS DE AGUA Y FIRMAS DE AUTORÍA:
+   Queda prohibido eliminar, alterar, ocultar o manipular cualquier aviso de derechos
+   de autor, encabezado de documentación (docblock), firma digital, marca lógica o
+   sello de identidad (@signature orms-kermint-2000, _ñacañacaStatus, ORMS_PROJ__KERMINT)
+   insertado en los archivos que componen este repositorio.
+
+JURISDICCIÓN Y LEY APLICABLE:
+Cualquier controversia, litigio, infracción o violación a los derechos de propiedad
+intelectual aquí estipulados estará sujeta a la legislación federal mexicana y a la
+jurisdicción de los tribunales competentes en la Ciudad de México, renunciando a
+cualquier otro fuero presente o futuro.
+
+(c) 2026 Oscar Ruben Martinez Sanchez. Todos los derechos reservados.
+Firma de Identidad: @signature orms-kermint-2000
+/* _ñacañacaStatus: active */

@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    /* Firefox */
+    * {
+        scrollbar-width: thin;
+        scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+    }
+
+    /* Webkit (Chrome, Edge, Safari) */
+    ::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: rgba(255, 255, 255, 0.15);
+        border-radius: 20px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background-color: rgba(255, 255, 255, 0.3);
+    }
+}
+
+/* SweetAlert2 Dark Mode Overrides */
+.swal2-dark-theme {
+    background-color: #1f2937 !important; /* bg-gray-800 */
+    color: #f3f4f6 !important; /* text-gray-100 */
+}
+.swal2-dark-theme .swal2-title {
+    color: #f3f4f6 !important;
+}
+.swal2-dark-theme .swal2-timer-progress-bar {
+    background: rgba(255, 255, 255, 0.2) !important;
+}
+
