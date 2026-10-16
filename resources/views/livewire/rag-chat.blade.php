@@ -64,12 +64,14 @@
 
     <!-- Overlay Móvil -->
     <div x-show="sidebarOpen" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-40 md:hidden"
-        @click="sidebarOpen = false" x-transition.opacity></div    <!-- Sidebar / Bottom Sheet -->
+        @click="sidebarOpen = false" x-transition.opacity></div>
+
+    <!-- Sidebar / Bottom Sheet -->
     <aside
         class="
             flex flex-col justify-between z-50 flex-shrink-0 transition-transform duration-300
             fixed inset-x-0 bottom-0 h-[85vh] bg-[#0c0817]/95 backdrop-blur-2xl rounded-t-[32px] p-5 shadow-[0_-10px_40px_rgba(0,0,0,0.7)]
-            md:relative md:w-[280px] md:h-auto md:bg-[#090510]/85 md:backdrop-blur-xl md:p-4 md:rounded-none md:shadow-none md:translate-y-0 md:flex border-r border-white/[0.06] relative z-20
+            md:relative md:w-[280px] md:h-auto md:bg-[#090510]/85 md:backdrop-blur-xl md:p-4 md:rounded-none md:shadow-none md:translate-y-0 md:flex relative z-20
         "
         :class="sidebarOpen ? 'translate-y-0' : 'translate-y-full md:translate-y-0'">
         <div class="flex-1 flex flex-col overflow-hidden">
