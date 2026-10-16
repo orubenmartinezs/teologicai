@@ -31,13 +31,64 @@
 
 /* SweetAlert2 Dark Mode Overrides */
 .swal2-dark-theme {
-    background-color: #1f2937 !important; /* bg-gray-800 */
-    color: #f3f4f6 !important; /* text-gray-100 */
+    background-color: #16111e !important;
+    color: #e9dff2 !important;
+    border: 1px solid rgba(221, 183, 255, 0.25) !important;
 }
 .swal2-dark-theme .swal2-title {
-    color: #f3f4f6 !important;
+    color: #f8fafc !important;
 }
 .swal2-dark-theme .swal2-timer-progress-bar {
-    background: rgba(255, 255, 255, 0.2) !important;
+    background: #a855f7 !important;
 }
+
+/* Obsidian Violet Glassmorphism Utilities (from Google Stitch) */
+@layer components {
+    .glass-panel {
+        background: rgba(18, 12, 28, 0.65);
+        backdrop-filter: blur(24px);
+        -webkit-backdrop-filter: blur(24px);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .glass-card {
+        background: rgba(22, 16, 35, 0.55);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .glass-card:hover {
+        background: rgba(35, 25, 56, 0.7);
+        border-color: rgba(192, 132, 252, 0.35);
+        box-shadow: 0 10px 30px -10px rgba(168, 85, 247, 0.25);
+    }
+
+    .glass-pill {
+        background: rgba(255, 255, 255, 0.04);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        transition: all 0.15s ease;
+    }
+    .glass-pill:hover {
+        background: rgba(168, 85, 247, 0.12);
+        border-color: rgba(192, 132, 252, 0.3);
+        color: #f8fafc;
+    }
+
+    .glass-input-box {
+        background: rgba(17, 12, 28, 0.85);
+        backdrop-filter: blur(28px);
+        -webkit-backdrop-filter: blur(28px);
+        border: 1px solid rgba(168, 85, 247, 0.3);
+        box-shadow: 0 15px 40px -10px rgba(0, 0, 0, 0.7), 0 0 30px -10px rgba(168, 85, 247, 0.2);
+        transition: all 0.2s ease;
+    }
+    .glass-input-box:focus-within {
+        border-color: rgba(192, 132, 252, 0.65);
+        box-shadow: 0 20px 45px -5px rgba(0, 0, 0, 0.8), 0 0 35px -5px rgba(192, 132, 252, 0.35);
+    }
+}
+
 
