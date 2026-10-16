@@ -71,7 +71,7 @@
         class="
             flex flex-col justify-between z-50 flex-shrink-0 transition-transform duration-300
             fixed inset-x-0 bottom-0 h-[85vh] bg-[#0c0817]/95 backdrop-blur-2xl rounded-t-[32px] p-5 shadow-[0_-10px_40px_rgba(0,0,0,0.7)]
-            md:relative md:w-[280px] md:h-auto md:bg-[#090510]/85 md:backdrop-blur-xl md:p-4 md:rounded-none md:shadow-none md:translate-y-0 md:flex relative z-20
+            md:relative md:w-[280px] md:h-auto md:bg-[#07030d] md:p-4 md:rounded-none md:shadow-none md:translate-y-0 md:flex relative z-20
         "
         :class="sidebarOpen ? 'translate-y-0' : 'translate-y-full md:translate-y-0'">
         <div class="flex-1 flex flex-col overflow-hidden">
@@ -225,7 +225,12 @@
 
     <!-- Chat Area (Obsidian Violet Glass Stage) -->
     <div
-        class="flex-1 flex flex-col justify-between relative w-full overflow-hidden z-10 rounded-none md:rounded-l-[36px] border-none md:border-solid md:border-l md:border-y md:border-white/[0.08] bg-obsidian-950/70 backdrop-blur-2xl">
+        class="flex-1 flex flex-col justify-between relative w-full overflow-hidden z-10 rounded-none md:rounded-l-[36px] border-none md:border-solid md:border-l md:border-y md:border-white/[0.08] obsidian-chamber-bg">
+
+        <!-- Luminous Ambient Blobs inside Chat Stage (from Stitch) -->
+        <div class="pointer-events-none absolute -top-32 right-1/4 w-[650px] h-[650px] bg-purple-600/22 rounded-full blur-[140px] z-0"></div>
+        <div class="pointer-events-none absolute top-1/4 -right-16 w-[520px] h-[520px] bg-fuchsia-600/18 rounded-full blur-[130px] z-0"></div>
+        <div class="pointer-events-none absolute bottom-10 left-10 w-[600px] h-[450px] bg-violet-800/20 rounded-full blur-[130px] z-0"></div>
 
         <!-- Top Header Navigation Bar (from Google Stitch) -->
         <header class="h-16 px-6 md:px-8 flex items-center justify-between z-10 pt-4 pb-2 border-b border-white/[0.06]">

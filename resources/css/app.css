@@ -89,6 +89,17 @@
         border-color: rgba(192, 132, 252, 0.65);
         box-shadow: 0 20px 45px -5px rgba(0, 0, 0, 0.8), 0 0 35px -5px rgba(192, 132, 252, 0.35);
     }
+
+    .obsidian-chamber-bg {
+        background-color: #0b0514;
+        background-image: 
+            radial-gradient(circle at 50% 28%, rgba(168, 85, 247, 0.24) 0%, rgba(126, 34, 206, 0.12) 36%, transparent 68%),
+            radial-gradient(circle at 92% 16%, rgba(219, 39, 119, 0.18) 0%, rgba(168, 85, 247, 0.07) 35%, transparent 60%),
+            radial-gradient(circle at 12% 82%, rgba(139, 92, 246, 0.15) 0%, transparent 55%),
+            radial-gradient(circle at 85% 75%, rgba(168, 85, 247, 0.09) 0%, transparent 50%),
+            linear-gradient(180deg, #190e2d 0%, #120922 45%, #080310 100%);
+        background-attachment: fixed;
+    }
 }
 
 
